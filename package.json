@@ -1,6 +1,6 @@
 {
   "name": "httplog",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A simple http server that logs incoming requests to stdout",
   "main": "index.js",
   "scripts": {
