@@ -9,6 +9,12 @@ const endpoint = process.env.ENDPOINT || '/';
 server.route({ 
   method: '*',
   path: endpoint,
+  config: {
+    payload: {
+      parse: false,
+      allow: ['application/csp-report']
+    }
+  },
   handler(request, reply) {
     reply('ok');
     const data = {
@@ -18,7 +24,7 @@ server.route({
       userAgent: request.headers['user-agent'],
       query: request.query,
       method: request.method,
-      data: request.payload
+      data: request.payload.toString('utf-8')
     }
 
     const spaces = (process.env.PRETTY == '1') ? 2 : 0;
