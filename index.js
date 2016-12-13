@@ -1,6 +1,6 @@
 const Hapi = require('hapi');
 
-const server = new Hapi.Server();
+const server = new Hapi.Server({ debug: { request: ['error'] } });
 const port = process.env.PORT || 8080;
 server.connection({ port: port });
 
