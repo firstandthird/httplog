@@ -12,7 +12,7 @@ server.route({
   config: {
     payload: {
       parse: false,
-      allow: ['application/csp-report']
+      allow: ['application/csp-report', 'application/json', 'text/plain', 'application/x-www-form-urlencoded']
     }
   },
   handler(request, reply) {
@@ -22,6 +22,7 @@ server.route({
       referrer: request.info.referrer,
       url: request.url.pathname,
       userAgent: request.headers['user-agent'],
+      contentType: request.headers['content-type'],
       query: request.query,
       method: request.method,
       data: request.payload.toString('utf-8')
