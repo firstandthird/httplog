@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/firstandthird/httplog#readme",
   "dependencies": {
-    "hapi": "^16.0.1"
+    "hapi": "^16.1.0"
   },
   "bin": {
     "httplog": "./index.js"
